@@ -1,3 +1,8 @@
-<h1>New User begin</h1>
-<h3><%= @username %></h3>
-<h1>New User end</h1>
+<form method="post" action="/users" accept-charset="UTF-8">
+  User Name: <input type="text" name="username"><br>
+  Email Address: <input type="text" name="email"><br>
+  Password: <input type="password" name="password"><br>
+  <br>
+  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+  <input type="submit" value="Create">
+</form>
