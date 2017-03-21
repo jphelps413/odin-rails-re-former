@@ -1,33 +1,4 @@
-<h1>Add a user</h1>
-<!--
-<form method="post" action="/users" accept-charset="UTF-8">
-  User Name: <input type="text" name="user[username]"><br>
-  Email Address: <input type="text" name="user[email]"><br>
-  Password: <input type="password" name="user[password]"><br>
-  <br>
-  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
-  <input type="submit" value="Create">
-</form>
--->
+<h1>New User</h1>
 
-<!--
-<%= form_tag '/users', method: :post do %>
-  <%= label_tag :username %>
-  <%= text_field_tag :username %></br>
-  <%= label_tag :email %>
-  <%= text_field_tag :email %></br>
-  <%= label_tag :password %>
-  <%= password_field_tag :password %></br>
-  <%= submit_tag "Create" %>
-<% end %>
--->
-
-<%= form_for @user do |f| %>
-  <!--
-    Is is more correct to wrap the labels in <%= f.label 'label text' %> ?
-  -->
-  Desired user name: <%= f.text_field :username %> <br/>
-  Email address: <%= f.text_field :email, :placeholder => 'example@example.com' %> <br/>
-  Password (8 chars min): <%= f.password_field :password %> <br/> <br/>
-  <%= f.submit "Create" %>
-<% end %>
+<%= render 'user_form' %>
+<%= button_to "Cancel", root_path, :method => :get %>

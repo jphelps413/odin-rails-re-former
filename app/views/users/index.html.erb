@@ -1,0 +1,9 @@
+<h1>Existing Users</h1>
+
+<% @users.each do |u| %>
+  <p>
+  <%= link_to u.username, edit_user_path(u) %> <%= u.email %>
+  </p>
+<% end %>
+
+<%= button_to 'Add User', new_user_path, :method => :get %>
